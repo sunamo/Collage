@@ -1,6 +1,6 @@
-﻿namespace Collage.Engine
+namespace Collage.Engine
 {
-    internal class TileTransformerSettings
+    public class TileTransformerSettings
     {
         public Percentage ScalePercent { get; set; }
 

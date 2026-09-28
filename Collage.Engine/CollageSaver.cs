@@ -1,36 +1,32 @@
-﻿namespace Collage.Engine
+namespace Collage.Engine
 {
+    using SunamoExceptions;
     using System;
     using System.Drawing;
     using System.Drawing.Imaging;
     using System.IO;
-
-    internal class CollageSaver
+    public class CollageSaver
     {
+static Type type = typeof(CollageSaver);
         private readonly FileNameCreator fileNameCreator;
-
         public CollageSaver(DirectoryInfo outputDirectory)
         {
             if (outputDirectory == null)
             {
-                throw new ArgumentNullException("outputDirectory");
+                ThrowEx.IsNull("outputDirectory");
             }
             
             this.fileNameCreator = new FileNameCreator(outputDirectory);
         }
-
         public FileInfo Save(Bitmap bitmap)
         {
             if (bitmap == null)
             {
-                throw new ArgumentNullException("bitmap");
+                ThrowEx.IsNull("bitmap");
             }
-
             var fileName = this.fileNameCreator.CreateFileName();
-
             bitmap.Save(fileName, ImageFormat.Jpeg);
             bitmap.Dispose();
-
             return new FileInfo(fileName);
         }
     }

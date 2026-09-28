@@ -1,27 +1,24 @@
-﻿namespace Collage.Engine
+namespace Collage.Engine
 {
+    using SunamoExceptions;
     using System;
     using System.IO;
-
-    internal class FileNameCreator
+    public class FileNameCreator
     {
+static Type type = typeof(FileNameCreator);
         public DirectoryInfo OutputDirectory { get; private set; }
-
         public FileNameCreator(DirectoryInfo outputDirectory)
         {
             if (outputDirectory == null)
             {
-                throw new ArgumentNullException("outputDirectory");
+                ThrowEx.IsNull("outputDirectory");
             }
-
             if (!outputDirectory.Exists)
             {
-                throw new ArgumentException("Output directory does not exist", "outputDirectory");
+                ThrowEx.Custom("Output directory does not exist");
             }
-
             this.OutputDirectory = outputDirectory;
         }
-
         public string CreateFileName()
         {
             string fileName = string.Format("collage-{0:yyyy-MM-dd_HHmm}.jpg", DateTime.Now);

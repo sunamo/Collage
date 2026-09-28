@@ -1,4 +1,4 @@
-﻿namespace Collage.Engine
+namespace Collage.Engine
 {
     public interface IRandomGenerator
     {

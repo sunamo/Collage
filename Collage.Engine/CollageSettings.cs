@@ -1,5 +1,3 @@
-﻿using System.Collections.Generic;
-
 namespace Collage.Engine
 {
     using System.IO;

@@ -1,74 +1,26 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{BC82FC61-26E6-4F4A-AF93-73C38AA46394}</ProjectGuid>
+    <TargetFramework>net9.0</TargetFramework>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Collage.Engine</RootNamespace>
     <AssemblyName>Collage.Engine</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
+    <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="*" Pack="True" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdditionalCollageSettings.cs" />
-    <Compile Include="CollageDimensionSettings.cs" />
-    <Compile Include="CollageGenerator.cs" />
-    <Compile Include="CollageSaver.cs" />
-    <Compile Include="CollageSettings.cs" />
-    <Compile Include="CreateCollageAsyncContext.cs" />
-    <Compile Include="DateFilesEnumerator.cs" />
-    <Compile Include="FileNameCreator.cs" />
-    <Compile Include="ImageExtensions.cs" />
-    <Compile Include="IFilesEnumerator.cs" />
-    <Compile Include="IRandomGenerator.cs" />
-    <Compile Include="Percentage.cs" />
-    <Compile Include="ProgressCounter.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RandomGenerator.cs" />
-    <Compile Include="RandomFilesEnumerator.cs" />
-    <Compile Include="TileTransformer.cs" />
-    <Compile Include="TileTransformerSettings.cs" />
+    <PackageReference Include="SunamoExceptions" Version="*" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>$(DefineConstants);CA1822;ASYNC</DefineConstants>
+    <NoWarn>CA1822;CS1573;CS1572;CS1570;CA1866;CA1865;CA1867;CS1998;CA1847;IDE0066</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>$(DefineConstants);CA1822;ASYNC</DefineConstants>
+    <NoWarn>CA1822;CS1573;CS1572;CS1570;CA1866;CA1865;CA1867;CS1998;CA1847;IDE0066</NoWarn>
+  </PropertyGroup>
 </Project>
