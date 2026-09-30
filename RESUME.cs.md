@@ -9,3 +9,9 @@ generated_date: 2026-09-29
 ## Description
 
 Simple application that creates collage of a given set of images.
+
+## Původ zdrojáků
+
+Staženo z GitHubu: **ano** — [piotrosz/Collage](https://github.com/piotrosz/Collage)
+
+- Zdroj určen podle: sunamo/Collage je fork na GitHubu.
