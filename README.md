@@ -1,3 +1,7 @@
+## Short description
+
+Fork aplikace Collage od Piotra Ludwiczuka: tvoří koláž z množiny obrázků (knihovna `Collage.Engine`, konzolová a WinForms aplikace). Engine byl v tomto forku převeden na SDK projekt .NET 9 s `SunamoExceptions`, konzolová a WinForms část zůstaly na .NET 4.5.
+
 ## Collage ##
 
 Simple application that creates collage of a given set of images.
