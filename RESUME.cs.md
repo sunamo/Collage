@@ -1,6 +1,6 @@
 ---
 schema_version: 7
-type: real-app
+type: sample
 file_count: 39
 avg_lines_per_file: 94
 move_to_legacy_percent: 40
