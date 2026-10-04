@@ -1,17 +1,26 @@
 ---
-schema_version: 7
+schema_version: 11
 type: forked-notmine-library
+category_override: none
 file_count: 39
+file_extensions: cs:26, csproj:3, config:2, md:2, ico:1, noext:1, resx:1, settings:1, slnx:1, txt:1
+file_extensions_updated: 2026-10-04
 avg_lines_per_file: 94
+total_lines: 2747
+metrics_lm: 2026-10-01 16:40:31
 move_to_legacy_percent: 40
-generated_date: 2026-10-01
-generated_time: 16:40:31
+description_updated: 2026-10-01
+links_updated: 2026-10-01
 github_source_url: https://github.com/piotrosz/Collage
+origin_status: found
+origin_checked: 2026-10-01
+article_source_url: not run
+article_status: pending
+article_checked: not run
 last_build_ok: no
 last_build_date: 2026-10-02
-last_tests_run_date: n/a
+last_tests_run_date: not run
 covered_lines: 0
-total_lines: 2747
 ---
 
 ## Description
